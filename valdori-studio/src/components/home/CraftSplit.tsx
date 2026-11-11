@@ -73,9 +73,9 @@ function Mock({ mode }: { mode: Mode }) {
         ) : (
           <>
             <Note className="left-[1cqw] top-[1cqw]">{"<h1>"}</Note>
-            <Note className="bottom-[1cqw] left-[1cqw]">font-size: clamp(2.5rem, 8.4vw, 9rem)</Note>
+            <Note className="max-sm:hidden bottom-[1cqw] left-[1cqw]">font-size: clamp(2.5rem, 8.4vw, 9rem)</Note>
             <span className="absolute -right-px top-0 h-full w-px bg-ember-500/70" />
-            <Note className="right-[1cqw] top-1/2 -translate-y-1/2">7 / 12 sütun</Note>
+            <Note className="max-sm:hidden right-[1cqw] top-1/2 -translate-y-1/2">7 / 12 sütun</Note>
           </>
         )}
       </div>
@@ -88,7 +88,7 @@ function Mock({ mode }: { mode: Mode }) {
             elle bitirilir.
           </p>
         ) : (
-          <Note className="left-[1cqw] top-1/2 -translate-y-1/2">max-width: 36ch · kontrast 12.6 : 1</Note>
+          <Note className="max-sm:hidden left-[1cqw] top-1/2 -translate-y-1/2">max-width: 36ch · kontrast 12.6 : 1</Note>
         )}
       </div>
 
@@ -104,7 +104,7 @@ function Mock({ mode }: { mode: Mode }) {
             <span className="size-[1.1cqw] bg-[#A4532B]" />
           </>
         ) : (
-          <Note className="left-[1cqw]">{"<a> · 48px · :focus-visible"}</Note>
+          <Note className="max-sm:hidden left-[1cqw]">{"<a> · 48px · :focus-visible"}</Note>
         )}
       </div>
 
@@ -122,7 +122,7 @@ function Mock({ mode }: { mode: Mode }) {
               <path d="M0 0 10 10M10 0 0 10" stroke="currentColor" strokeWidth="1" vectorEffect="non-scaling-stroke" />
             </svg>
             <Note className="left-[1cqw] top-[1cqw]">{"<img> · AVIF · lazy"}</Note>
-            <Note className="bottom-[1cqw] left-[1cqw]">aspect-ratio: 4 / 5 · CLS 0</Note>
+            <Note className="max-sm:hidden bottom-[1cqw] left-[1cqw]">aspect-ratio: 4 / 5 · CLS 0</Note>
           </>
         )}
       </div>
@@ -130,7 +130,7 @@ function Mock({ mode }: { mode: Mode }) {
       {!d && (
         <>
           <Note className="bottom-[2.2%] left-[5%] !text-bone/60">grid: 12 sütun · gap 24px</Note>
-          <Note className="bottom-[2.2%] right-[5%] !text-bone/60">LCP hedefi ≤ 2,5 sn</Note>
+          <Note className="max-sm:hidden bottom-[2.2%] right-[5%] !text-bone/60">LCP hedefi ≤ 2,5 sn</Note>
         </>
       )}
     </div>

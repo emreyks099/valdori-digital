@@ -35,6 +35,7 @@ export function SplitLines({ children, className, as: Tag = "div", delay = 0 }: 
             mask: "lines",
             linesClass: "split-line",
             autoSplit: true,
+            aria: "none",
             onSplit: (self) =>
               gsap.from(self.lines, {
                 yPercent: 108,
@@ -82,7 +83,7 @@ export function Fade({
       mm.add(MQ.motion, () => {
         const targets = stagger ? Array.from(el.children) : el;
         gsap.from(targets, {
-          autoAlpha: 0,
+          opacity: 0, // visibility değil: gizliyken de klavye odağı alabilsin
           y,
           duration: 1,
           ease: "power3.out",
@@ -120,10 +121,11 @@ export function ScrubWords({ children, className, as: Tag = "p" }: BaseProps) {
           split = SplitText.create(el, {
             type: "words",
             autoSplit: true,
+            aria: "none",
             onSplit: (self) =>
               gsap.fromTo(
                 self.words,
-                { opacity: 0.16 },
+                { opacity: 0.3 },
                 {
                   opacity: 1,
                   ease: "none",

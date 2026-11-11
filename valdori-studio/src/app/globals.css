@@ -729,3 +729,9 @@ textarea.field {
     animation: none !important;
   }
 }
+
+/* GSAP SplitText satır maskeleri: Türkçe büyük harf noktaları ve kuyruklar kırpılmasın */
+.split-line-mask {
+  padding-block: 0.22em 0.16em;
+  margin-block: -0.22em -0.16em;
+}

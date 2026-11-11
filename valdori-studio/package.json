@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint src",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --test src/lib/*.test.ts",
+    "qa:routes": "node scripts/qa-routes.mjs 360,390,768,1024,1440,1920",
+    "qa:e2e": "node scripts/qa-e2e.mjs",
+    "check": "npm run lint && npm run typecheck && npm test && npm run build"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -30,5 +35,8 @@
     "eslint-config-next": "16.4.6",
     "tailwindcss": "4.3.3",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=22.18"
   }
 }

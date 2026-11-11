@@ -1,0 +1,231 @@
+{
+  "total": 45,
+  "failed": 0,
+  "results": [
+    {
+      "name": "mobil: menü düğmesi görünür",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobil: menü düğmesi ≥ 44px",
+      "ok": true,
+      "detail": "44×44"
+    },
+    {
+      "name": "mobil: menü açılır",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobil: aria-expanded=true",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobil: sayfa kaydırması kilitli",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobil: menüde 7 bağlantı",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobil: Esc menüyü kapatır",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobil: kaydırma kilidi kalkar",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobil: menüden gezinme çalışır ve menü kapanır",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "masaüstü: hero birincil CTA → /iletisim",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "masaüstü: hero ikincil CTA → /projeler",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "masaüstü: proje detayına geçiş",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "klavye: ilk odak 'İçeriğe geç'",
+      "ok": true,
+      "detail": "İçeriğe geç"
+    },
+    {
+      "name": "klavye: odak halkası görünür",
+      "ok": true,
+      "detail": "solid"
+    },
+    {
+      "name": "skor: arayüzdeki genel skor modelle aynı",
+      "ok": true,
+      "detail": "ui=64 model=64"
+    },
+    {
+      "name": "skor: bant etiketi doğru",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "skor: 5 kategori skoru modelle aynı",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "skor: öneriler listelenir",
+      "ok": true,
+      "detail": "8"
+    },
+    {
+      "name": "skor: ilk öneri en yüksek etkili olan",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "skor: sonuç URL'de taşınır",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "skor: yanıtlar sunucuya gönderilmez",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "skor: paylaşılan bağlantı aynı sonucu açar",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "skor: bozuk bağlantı giriş ekranına düşer",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "skor: yeniden başlatılabilir",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "form: boş gönderimde alan hataları gösterilir",
+      "ok": true,
+      "detail": "5 hata"
+    },
+    {
+      "name": "form: ilk hatalı alana odaklanır",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "form: geçersiz e-posta reddedilir",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "form: e-posta servisi yokken API 503 döner",
+      "ok": true,
+      "detail": "503"
+    },
+    {
+      "name": "form: sahte başarı yok — dürüst hata mesajı",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "form: yazılanlar korunur",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "api: geçersiz veri 400 + alan hatası",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "api: onaysız gönderim reddedilir",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "api: aşırı uzun mesaj reddedilir",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "api: bozuk JSON 400",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "api: büyük gövde 413",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "api: yanlış içerik türü 415",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "api: farklı kökenden istek 403",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "api: bal küpü dolu → sessizce yutulur (e-posta gönderilmez)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "api: çok hızlı gönderim → sessizce yutulur",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "api: GET desteklenmez (405)",
+      "ok": true,
+      "detail": "405"
+    },
+    {
+      "name": "api: hız sınırı 6. istekte 429",
+      "ok": true,
+      "detail": "503,503,503,503,503,429,429"
+    },
+    {
+      "name": "azaltılmış hareket: yumuşak kaydırma kapalı",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "azaltılmış hareket: sabitlenen bölüm yok",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "azaltılmış hareket: gizli kalan içerik yok",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "JS kapalı: ana içerik okunur",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

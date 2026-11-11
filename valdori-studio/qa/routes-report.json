@@ -2,15 +2,208 @@
   "summary": {
     "routes": 32,
     "widths": [
+      390,
       1440
     ],
-    "checks": 32,
+    "checks": 64,
     "failing": 0,
     "internalLinks": 31,
     "brokenLinks": []
   },
   "bad": [],
   "report": [
+    {
+      "width": 390,
+      "route": "/",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/hizmetler",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/hizmetler/web-tasarim",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/hizmetler/yapay-zeka",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/hizmetler/otomasyon",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/hizmetler/ozel-yazilim",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/hizmetler/seo",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/hizmetler/sosyal-medya",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/projeler",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/projeler/atolye-mono",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/projeler/kiyi-klinik",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/projeler/rota-panel",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/projeler/firin-no-7",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/hakkimizda",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/dijital-skor",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/iletisim",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/blog",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/blog/kategori/web-tasarim",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/blog/kategori/yapay-zeka",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/blog/kategori/otomasyon",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/blog/kategori/seo",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/blog/kategori/ozel-yazilim",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/blog/kategori/dijital-strateji",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/blog/dijital-olgunluk-nedir",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/blog/ozel-yazilim-mi-hazir-cozum-mu",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/blog/core-web-vitals-rehberi",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/blog/otomatiklestirilebilecek-is-surecleri",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/blog/isletmeler-icin-yapay-zeka-nereden-baslanir",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/blog/hazir-tema-mi-ozel-tasarim-mi",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/gizlilik",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/cerez-politikasi",
+      "status": 200,
+      "problems": []
+    },
+    {
+      "width": 390,
+      "route": "/olmayan-sayfa",
+      "status": 404,
+      "problems": []
+    },
     {
       "width": 1440,
       "route": "/",

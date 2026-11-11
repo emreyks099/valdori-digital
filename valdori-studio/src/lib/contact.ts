@@ -2,6 +2,9 @@ import { z } from "zod";
 
 /** İstemci ve sunucunun ortak kullandığı iletişim formu şeması. */
 
+// Zod, hız için `new Function` dener; CSP (unsafe-eval yok) ile çakışmaması için kapatılır.
+z.config({ jitless: true });
+
 export const projectTypes = [
   "Web Tasarım",
   "Yapay Zekâ",

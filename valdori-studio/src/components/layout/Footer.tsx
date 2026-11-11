@@ -76,7 +76,7 @@ export function Footer() {
       <div aria-hidden="true" className="relative select-none">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[55%] bg-[radial-gradient(60%_100%_at_50%_100%,rgba(255,104,40,0.22),transparent_70%)]" />
         <p
-          className="-mb-[0.19em] whitespace-nowrap text-center font-display text-[24.5vw] font-extrabold uppercase leading-[0.8] tracking-[-0.01em] text-ink-800 [font-stretch:100%] 3xl:text-[29rem]"
+          className="-mb-[0.19em] whitespace-nowrap text-center font-display text-[21.5vw] font-extrabold uppercase leading-[0.8] tracking-[-0.01em] text-ink-800 [font-stretch:100%] 3xl:text-[25.5rem]"
         >
           Valdori
         </p>

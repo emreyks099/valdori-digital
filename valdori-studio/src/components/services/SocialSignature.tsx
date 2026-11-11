@@ -107,7 +107,7 @@ export function SocialSignature() {
       </div>
 
       <div className="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:items-center">
-        <ul aria-hidden="true" className="mx-auto grid w-full max-w-[34rem] grid-cols-3 gap-1.5 bg-ink-950 p-1.5 sm:gap-2 sm:p-2">
+        <ul aria-hidden="true" className="mx-auto grid w-full max-w-[34rem] grid-cols-3 lg:mx-0 gap-1.5 bg-ink-950 p-1.5 sm:gap-2 sm:p-2">
           {tiles.map((t, i) => {
             const on = pillar === "hepsi" || t.pillar === pillar;
             return (

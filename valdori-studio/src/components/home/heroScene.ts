@@ -63,6 +63,22 @@ function buildEnvironment(renderer: THREE.WebGLRenderer) {
 
 export function mountHeroScene(canvas: HTMLCanvasElement, opts: HeroSceneOptions) {
   const host = canvas.parentElement!;
+
+  // Yazılımsal WebGL (SwiftShader, llvmpipe…) ana iş parçacığını kilitler: GPU yoksa
+  // sahne hiç kurulmaz, statik SVG kompozisyon yerinde kalır.
+  const probe =
+    document.createElement("canvas").getContext("webgl2", { failIfMajorPerformanceCaveat: true }) ??
+    document.createElement("canvas").getContext("webgl2");
+  if (!probe) throw new Error("WebGL donanım hızlandırması yok");
+  const dbg = probe.getExtension("WEBGL_debug_renderer_info");
+  const gpu = dbg ? String(probe.getParameter(dbg.UNMASKED_RENDERER_WEBGL)) : "";
+  probe.getExtension("WEBGL_lose_context")?.loseContext();
+  // `?gl=1` yalnızca test içindir: GPU'suz ortamda sahneyi zorla kurar.
+  const forced = new URLSearchParams(window.location.search).get("gl") === "1";
+  if (!forced && /swiftshader|llvmpipe|software|basic render/i.test(gpu)) {
+    throw new Error("Yazılımsal WebGL: sahne atlandı");
+  }
+
   const renderer = new THREE.WebGLRenderer({
     canvas,
     antialias: true,
@@ -246,8 +262,8 @@ export function mountHeroScene(canvas: HTMLCanvasElement, opts: HeroSceneOptions
     bladeMat.color.setHex(EMBER).multiplyScalar(1.4 + 2.2 * power);
     glowMat.opacity = 0.85 * power;
     (floorGlow.material as THREE.MeshBasicMaterial).opacity = 0.32 * power;
-    keyLow.intensity = 90 * power;
-    keyHigh.intensity = 120 * power;
+    keyLow.intensity = 46 * power;
+    keyHigh.intensity = 58 * power;
     keyLow.position.x = pointer.x * 1.4;
     keyHigh.position.x = pointer.x * 2.2;
     keyHigh.position.y = 7.5 + pointer.y * 1.6;

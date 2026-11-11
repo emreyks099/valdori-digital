@@ -70,7 +70,7 @@ export function WebSignature() {
             {["Masa", "Sandalye", "Raf"].map((n, i) => (
               <div key={n} className={`flex items-center justify-between bg-[#E7E0D4] px-4 py-4 @[560px]:px-7 ${i === 2 ? "@[560px]:col-span-2 @[900px]:col-span-1" : ""}`}>
                 <span className="font-display text-[1.375rem] font-bold uppercase leading-none [font-stretch:68%]">{n}</span>
-                <span className="font-mono text-[0.6875rem] opacity-60">0{i + 1}</span>
+                <span className="font-mono text-[0.6875rem] opacity-80">0{i + 1}</span>
               </div>
             ))}
           </div>

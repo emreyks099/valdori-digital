@@ -1,0 +1,10 @@
+# Netlify yapılandırması — proje valdori-studio/ alt klasöründedir.
+# Next.js çalışma zamanı (OpenNext adaptörü) Netlify tarafından otomatik algılanır.
+[build]
+  base = "valdori-studio"
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
