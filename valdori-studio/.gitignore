@@ -43,3 +43,4 @@ next-env.d.ts
 
 # QA çıktıları
 /qa/shots/
+/qa/preview/
