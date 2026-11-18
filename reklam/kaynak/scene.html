@@ -1,0 +1,240 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&display=block" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:720px;height:1280px;overflow:hidden;background:#06050a}
+body{font-family:'Inter Tight',Inter,sans-serif;color:#f4f1ff}
+#stage{position:absolute;inset:0;overflow:hidden;background:#06050a}
+.bgGlow{position:absolute;inset:-20%;background:
+  radial-gradient(40% 30% at 50% 38%,rgba(138,76,255,.45),transparent 70%),
+  radial-gradient(35% 25% at 20% 80%,rgba(255,64,170,.22),transparent 70%),
+  radial-gradient(30% 25% at 85% 15%,rgba(64,140,255,.25),transparent 70%)}
+.grain{position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>")}
+.streaks{position:absolute;inset:0;pointer-events:none}
+.streak{position:absolute;height:6px;border-radius:6px;background:linear-gradient(90deg,transparent,#e9d6ff,#b06cff,transparent);filter:blur(2px)}
+
+/* turntable */
+#table{position:absolute;left:50%;top:1010px;width:560px;height:120px;margin-left:-280px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(170,120,255,.55),rgba(90,40,200,.15) 70%,transparent);filter:blur(1px)}
+#ring{position:absolute;left:50%;top:1025px;width:470px;height:92px;margin-left:-235px;border-radius:50%;border:2px solid rgba(220,200,255,.55);box-shadow:0 0 30px rgba(170,110,255,.8),inset 0 0 20px rgba(170,110,255,.6)}
+#ticks{position:absolute;left:50%;top:1025px;width:470px;height:92px;margin-left:-235px}
+
+/* phone */
+#phoneWrap{position:absolute;left:50%;top:300px;width:360px;height:740px;margin-left:-180px;perspective:1400px}
+#phone{position:absolute;inset:0;transform-style:preserve-3d}
+.face{position:absolute;inset:0;border-radius:54px;background:#111;padding:12px;
+  box-shadow:0 0 0 2px #2b2735,0 0 0 4px #0d0c12,0 40px 80px rgba(0,0,0,.6),0 0 90px rgba(150,90,255,.35);backface-visibility:hidden}
+.screen{position:relative;width:100%;height:100%;border-radius:43px;overflow:hidden;background:#f6efe6}
+.island{position:absolute;top:12px;left:50%;width:100px;height:28px;margin-left:-50px;border-radius:20px;background:#000;z-index:5}
+.glare{position:absolute;inset:0;border-radius:43px;background:linear-gradient(115deg,rgba(255,255,255,.0) 30%,rgba(255,255,255,.22) 45%,rgba(255,255,255,0) 60%);z-index:6;mix-blend-mode:screen}
+#site{position:absolute;left:0;top:0;width:100%}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:58px 22px 14px;color:#2a1a12;font-size:12px;font-weight:600;letter-spacing:.08em}
+.nav b{font-family:'Instrument Serif';font-size:24px;font-weight:400;letter-spacing:0}
+.burger{width:22px;height:10px;border-top:2px solid #2a1a12;border-bottom:2px solid #2a1a12}
+.hero{margin:6px 14px;height:300px;border-radius:26px;position:relative;overflow:hidden;
+  background:radial-gradient(60% 60% at 70% 30%,#ffb3a1,transparent 70%),linear-gradient(160deg,#3b1d14,#7a2f22 60%,#c2523a)}
+.hero h1{position:absolute;left:20px;bottom:64px;font-family:'Instrument Serif';font-weight:400;font-size:44px;line-height:.95;color:#fff6ee}
+.hero h1 i{color:#ffcdb8}
+.hero .btn{position:absolute;left:20px;bottom:20px;background:#fff6ee;color:#3b1d14;font-size:12px;font-weight:700;padding:10px 16px;border-radius:30px}
+.blob{position:absolute;right:-30px;top:30px;width:190px;height:190px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#fff,#ffd9c9 30%,#e2735a 70%,#7a2f22);box-shadow:0 20px 40px rgba(0,0,0,.35)}
+.berry{position:absolute;width:26px;height:30px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 35% 30%,#ff8a8a,#d31d3c 60%,#8a0b22)}
+.sec{padding:20px 22px 8px;color:#2a1a12}
+.sec h2{font-family:'Instrument Serif';font-weight:400;font-size:28px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:8px 14px}
+.card{height:150px;border-radius:20px;position:relative;overflow:hidden}
+.card span{position:absolute;left:12px;bottom:10px;font-size:11px;font-weight:700;color:#fff}
+.c1{background:linear-gradient(160deg,#c98b5a,#6b3a1f)}.c2{background:linear-gradient(160deg,#e8a0b4,#9b3d5c)}
+.c3{background:linear-gradient(160deg,#8fb39a,#2f5a3d)}.c4{background:linear-gradient(160deg,#e6c27a,#9a6a1c)}
+.card::after{content:"";position:absolute;right:-18px;top:-18px;width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,.25)}
+.order{margin:14px;border-radius:22px;background:#2a1a12;color:#fff6ee;padding:18px;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+.order em{font-style:normal;background:#ffcdb8;color:#2a1a12;border-radius:20px;padding:7px 12px;font-weight:700}
+
+/* overlay text */
+.hook{position:absolute;left:40px;right:40px;top:78px;text-align:center}
+.hook .l1{font-size:30px;font-weight:600;letter-spacing:-.01em;color:#cfc4ea}
+.hook .l2{font-family:'Instrument Serif';font-style:italic;font-size:54px;line-height:1.02;margin-top:8px;
+  background:linear-gradient(90deg,#fff,#e1c8ff 50%,#ff9bd2);-webkit-background-clip:text;color:transparent}
+#services{position:absolute;inset:0}
+.svc{position:absolute;left:0;right:0;top:540px;text-align:center;font-weight:800;font-size:96px;letter-spacing:-.045em;line-height:.9;color:#fff;
+  text-shadow:0 0 40px rgba(160,100,255,.7)}
+.svc i{font-family:'Instrument Serif';font-weight:400;font-style:italic;letter-spacing:-.01em}
+.svcIdx{position:absolute;left:0;right:0;top:470px;text-align:center;font-size:18px;font-weight:600;letter-spacing:.35em;color:#b9a6e8}
+.svcBar{position:absolute;left:150px;right:150px;top:780px;height:3px;background:rgba(255,255,255,.12);border-radius:3px;overflow:hidden}
+.svcBar div{height:100%;background:linear-gradient(90deg,#8a4cff,#ff6ec4)}
+#dim{position:absolute;inset:0;background:#06050a}
+
+#outro{position:absolute;inset:0}
+.mark{position:absolute;left:50%;top:380px;width:150px;height:150px;margin-left:-75px}
+.word{position:absolute;left:0;right:0;top:575px;text-align:center;font-weight:800;font-size:104px;letter-spacing:-.05em;line-height:1}
+.word span{display:inline-block}
+.sub{position:absolute;left:0;right:0;top:690px;text-align:center;font-size:22px;font-weight:600;letter-spacing:.9em;padding-left:.9em;color:#c9b8f2}
+.tag{position:absolute;left:60px;right:60px;top:790px;text-align:center;font-family:'Instrument Serif';font-size:44px;line-height:1.08;color:#efe8ff}
+.tag i{color:#d9b6ff}
+.svcLine{position:absolute;left:40px;right:40px;top:930px;text-align:center;font-size:17px;font-weight:500;color:#a99ccc;letter-spacing:.02em}
+.cta{position:absolute;left:50%;top:1010px;transform:translateX(-50%);white-space:nowrap;padding:22px 38px;border-radius:60px;font-size:26px;font-weight:700;color:#0b0812;
+  background:linear-gradient(90deg,#fff,#e7d6ff);box-shadow:0 0 50px rgba(170,110,255,.6)}
+.cta::after{content:"";position:absolute;inset:-6px;border-radius:66px;border:1.5px solid rgba(220,200,255,.5)}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+</style></head>
+<body>
+<div id="stage">
+  <div class="bgGlow" id="glow"></div>
+  <div id="table"></div>
+  <svg id="ticks" viewBox="0 0 470 92"></svg>
+  <div id="ring"></div>
+  <div id="phoneWrap"><div id="phone">
+    <div class="face"><div class="screen">
+      <div class="island"></div>
+      <div id="site">
+        <div class="nav"><b>Atelier Mira</b><span>MENÜ</span><div class="burger"></div></div>
+        <div class="hero">
+          <div class="blob"></div>
+          <div class="berry" style="right:120px;top:40px;transform:rotate(-20deg)"></div>
+          <div class="berry" style="right:30px;top:20px;transform:rotate(25deg)"></div>
+          <div class="berry" style="right:70px;top:12px"></div>
+          <h1>Her dilim<br><i>bir hikâye.</i></h1>
+          <div class="btn">Sipariş ver →</div>
+        </div>
+        <div class="sec"><h2>Bu haftanın favorileri</h2></div>
+        <div class="cards">
+          <div class="card c1"><span>Çikolatalı Drip</span></div>
+          <div class="card c2"><span>Frambuazlı Tart</span></div>
+          <div class="card c3"><span>Antep Fıstıklı</span></div>
+          <div class="card c4"><span>Karamel Cheesecake</span></div>
+        </div>
+        <div class="order"><span>Online sipariş · 7/24</span><em>Sepete ekle</em></div>
+        <div class="cards">
+          <div class="card c2"><span>Doğum Günü</span></div>
+          <div class="card c1"><span>Butik Pasta</span></div>
+        </div>
+      </div>
+      <div class="glare" id="glare"></div>
+    </div></div>
+  </div></div>
+
+  <div class="hook" id="hook">
+    <div class="l1" id="h1">Bu bir pasta reklamı değil.</div>
+    <div class="l2" id="h2">Ama en az onun kadar<br>iştah açıcı.</div>
+  </div>
+
+  <div id="dim" style="opacity:0"></div>
+  <div id="services">
+    <div class="svcIdx" id="svcIdx"></div>
+    <div class="svc" id="svc"></div>
+    <div class="svcBar"><div id="svcBarFill"></div></div>
+  </div>
+
+  <div id="outro">
+    <svg class="mark" id="mark" viewBox="0 0 150 150">
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#cfa8ff"/><stop offset="1" stop-color="#ff7ccc"/></linearGradient></defs>
+      <circle cx="75" cy="75" r="70" fill="none" stroke="url(#g)" stroke-width="2.5" id="markRing" stroke-dasharray="440" stroke-dashoffset="440"/>
+      <path id="markV" d="M38 44 L75 112 L112 44" fill="none" stroke="url(#g)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="170" stroke-dashoffset="170"/>
+    </svg>
+    <div class="word" id="word"></div>
+    <div class="sub" id="sub">DIGITAL</div>
+    <div class="tag" id="tag">Markanı dijitalde<br><i>bir üst seviyeye</i> taşıyoruz.</div>
+    <div class="svcLine" id="svcLine">Web · Yazılım · Yapay Zekâ · Otomasyon · SEO · Sosyal Medya</div>
+    <div class="cta" id="cta">Projeni konuşalım →</div>
+  </div>
+
+  <div class="streaks" id="streaks"></div>
+  <div class="grain"></div>
+  <div id="flash"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const prog=(t,a,b)=>clamp((t-a)/(b-a));
+const eOut=x=>1-Math.pow(1-x,3), eIn=x=>x*x*x, eIO=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const eBack=x=>{const c=1.6;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+
+// word letters
+"VALDORI".split("").forEach(ch=>{const s=document.createElement('span');s.textContent=ch;$('word').appendChild(s)});
+// turntable ticks
+let tk='';for(let i=0;i<36;i++)tk+=`<rect class="tk" x="-1.5" y="-4" width="3" height="8" rx="1.5" fill="#e9d9ff"/>`;$('ticks').innerHTML=tk;
+// streaks
+const rnd=(s=>()=> (s=(s*16807)%2147483647)/2147483647)(42);
+const SN=22, st=[];
+for(let i=0;i<SN;i++){const d=document.createElement('div');d.className='streak';$('streaks').appendChild(d);
+  st.push({el:d,y:rnd()*1280,w:200+rnd()*500,sp:1+rnd()*1.5,o:rnd(),h:2+rnd()*10,hue:rnd()})}
+
+const SVCS=[["Web","Tasarım"],["Özel","Yazılım"],["Yapay","Zekâ"],["Otomasyon",""],["SEO",""],["Sosyal","Medya"]];
+const S0=3.0, SD=0.5; // services start / per item
+
+window.render=function(t){
+  // ---- whip-in (0 - 0.45s) ----
+  const w=prog(t,0,0.45), wE=eOut(w);
+  const stage=$('stage');
+  stage.style.transform=`translateX(${(1-wE)*-55}%) skewX(${(1-wE)*12}deg)`;
+  stage.style.filter=`blur(${(1-wE)*26}px) saturate(${1+ (1-wE)*0.8})`;
+  // streaks visible during whip, and again on transitions
+  const sv = Math.max(1-prog(t,0.15,0.6), Math.max(0,1-Math.abs(t-2.95)/0.18), Math.max(0,1-Math.abs(t-6.05)/0.18));
+  st.forEach((s,i)=>{const x=((t*2600*s.sp + s.o*1600)%1900)-500;
+    s.el.style.cssText+=`;left:${x}px;top:${s.y}px;width:${s.w}px;height:${s.h}px;opacity:${sv*(0.4+0.6*s.o)};filter:blur(${2+s.h/3}px) hue-rotate(${s.hue*80-40}deg)`});
+
+  // ---- glow breathing ----
+  $('glow').style.transform=`scale(${1+0.05*Math.sin(t*2)}) rotate(${t*4}deg)`;
+
+  // ---- phone & turntable (0 - 3.0, then dimmed behind services) ----
+  const rot = Math.sin(t*0.95)*24 - 6;         // turntable sway
+  const intro = eOut(prog(t,0.05,1.0));
+  const phOut = eIn(prog(t,5.7,6.1));
+  const phY = (1-intro)*80 + phOut*-120;
+  const phS = (0.88+0.12*intro)*(1-0.15*phOut);
+  $('phone').style.transform=`translateY(${phY}px) scale(${phS}) rotateY(${rot}deg) rotateX(${4+Math.sin(t*1.3)*2}deg)`;
+  $('phoneWrap').style.opacity = 1-phOut; $('phoneWrap').style.filter=`blur(${eOut(prog(t,2.8,3.2))*6}px)`;
+  $('glare').style.transform=`translateX(${-rot*6}px)`;
+  // site auto-scroll
+  const sc = eIO(prog(t,1.2,2.6))*380 + eIO(prog(t,3.2,5.6))*260;
+  $('site').style.transform=`translateY(${-sc}px)`;
+  // ticks rotate around ellipse
+  document.querySelectorAll('.tk').forEach((r,i)=>{const a=i/36*Math.PI*2 + t*1.4;
+    const x=235+Math.cos(a)*235, y=46+Math.sin(a)*46; const front=(Math.sin(a)+1)/2;
+    r.setAttribute('transform',`translate(${x},${y})`); r.setAttribute('opacity',(0.15+0.85*front)*(1-phOut))});
+  $('table').style.opacity=$('ring').style.opacity=(0.75+0.25*Math.sin(t*3))*(1-phOut);
+
+  // ---- hook text (0.5 - 2.85) ----
+  const h1=eOut(prog(t,0.45,0.85)), h2=eOut(prog(t,1.1,1.5)), hOut=eIn(prog(t,2.6,2.9));
+  $('h1').style.cssText=`opacity:${h1*(1-hOut)};transform:translateY(${(1-h1)*30 - hOut*40}px)`;
+  $('h2').style.cssText+=`;opacity:${h2*(1-hOut)};transform:translateY(${(1-h2)*40 - hOut*40}px);filter:blur(${(1-h2)*10+hOut*8}px)`;
+
+  // ---- services (3.0 - 6.0) ----
+  const dimV = 0.86*eOut(prog(t,2.8,3.1)) * (1-prog(t,5.9,6.1)) + prog(t,5.9,6.1);
+  $('dim').style.opacity = t<5.9? dimV : 1;
+  const inSvc = t>=S0 && t<S0+SVCS.length*SD;
+  $('services').style.opacity = inSvc?1:0;
+  if(inSvc){
+    const k=Math.floor((t-S0)/SD), lt=(t-S0-k*SD)/SD;
+    const [a,b]=SVCS[k];
+    $('svc').innerHTML = b? `${a}<br><i>${b}</i>` : `<span style="display:inline-block;margin-top:48px">${a}</span>`;
+    const ent=eBack(clamp(lt/0.35)), ex=eIn(prog(lt,0.82,1));
+    $('svc').style.transform=`translateY(${(1-ent)*90 - ex*70}px) scale(${0.92+0.08*ent})`;
+    $('svc').style.opacity = clamp(lt/0.18)*(1-ex);
+    $('svc').style.filter=`blur(${(1-clamp(lt/0.25))*14 + ex*12}px)`;
+    $('svcIdx').textContent=`0${k+1} / 0${SVCS.length}`;
+    $('svcBarFill').style.width = ((t-S0)/(SVCS.length*SD)*100)+'%';
+  }
+
+  // ---- outro (6.0 - 8.53) ----
+  const oOn = t>=6.0;
+  $('outro').style.opacity = oOn?1:0;
+  $('flash').style.opacity = Math.max(0,1-Math.abs(t-6.02)/0.12)*0.55;
+  if(oOn){
+    $('markRing').setAttribute('stroke-dashoffset', 440*(1-eIO(prog(t,6.0,6.7))));
+    $('markV').setAttribute('stroke-dashoffset', 170*(1-eOut(prog(t,6.15,6.75))));
+    $('mark').style.transform=`scale(${0.85+0.15*eBack(prog(t,6.0,6.6))}) rotate(${(1-eOut(prog(t,6,6.8)))*-40}deg)`;
+    [...$('word').children].forEach((s,i)=>{const p=eBack(prog(t,6.25+i*0.05,6.7+i*0.05));
+      s.style.transform=`translateY(${(1-p)*70}px)`; s.style.opacity=clamp(p*1.5); s.style.filter=`blur(${(1-clamp(p))*8}px)`;
+      s.style.background='linear-gradient(180deg,#fff,#d8c2ff)'; s.style.webkitBackgroundClip='text'; s.style.color='transparent'});
+    const sb=eOut(prog(t,6.7,7.1)); $('sub').style.opacity=sb; $('sub').style.letterSpacing=(1.4-0.5*sb)+'em';
+    const tg=eOut(prog(t,6.95,7.4)); $('tag').style.cssText+=`;opacity:${tg};transform:translateY(${(1-tg)*30}px);filter:blur(${(1-tg)*8}px)`;
+    const sl=eOut(prog(t,7.2,7.6)); $('svcLine').style.opacity=sl;
+    const c=eBack(prog(t,7.4,7.9)); const pulse=1+0.03*Math.sin(Math.max(0,t-7.9)*9);
+    $('cta').style.transform=`translateX(-50%) scale(${(0.6+0.4*c)*pulse})`; $('cta').style.opacity=clamp(c*1.4);
+  }
+};
+window.render(0);
+</script>
+</body></html>
