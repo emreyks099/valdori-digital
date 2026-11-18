@@ -24,11 +24,11 @@ body{font-family:Manrope,sans-serif;color:#E8EEF6}
 #phoneWrap{position:absolute;left:50%;top:300px;width:360px;height:740px;margin-left:-180px;perspective:1400px}
 #phone{position:absolute;inset:0;transform-style:preserve-3d}
 .face{position:absolute;inset:0;border-radius:54px;background:#111;padding:12px;
-  box-shadow:0 0 0 2px #2b2735,0 0 0 4px #0d0c12,0 40px 80px rgba(0,0,0,.6),0 0 90px rgba(25,227,255,.25);backface-visibility:hidden}
-.screen{position:relative;width:100%;height:100%;border-radius:43px;overflow:hidden;background:#f6efe6}
+  box-shadow:0 0 0 2px #56637a,0 0 0 4px #0d1018,inset 0 0 0 1px rgba(232,238,246,.15),0 40px 80px rgba(0,0,0,.6),0 0 90px rgba(25,227,255,.25);backface-visibility:hidden}
+.screen{position:relative;width:100%;height:100%;border-radius:43px;overflow:hidden;background:#05070D}
 .island{position:absolute;top:12px;left:50%;width:100px;height:28px;margin-left:-50px;border-radius:20px;background:#000;z-index:5}
 .glare{position:absolute;inset:0;border-radius:43px;background:linear-gradient(115deg,rgba(255,255,255,.0) 30%,rgba(255,255,255,.22) 45%,rgba(255,255,255,0) 60%);z-index:6;mix-blend-mode:screen}
-#site{position:absolute;left:0;top:0;width:100%}
+#site{position:absolute;left:0;top:44px;width:100%}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:58px 22px 14px;color:#2a1a12;font-size:12px;font-weight:600;letter-spacing:.08em}
 .nav b{font-family:'Instrument Serif';font-size:24px;font-weight:400;letter-spacing:0}
 .burger{width:22px;height:10px;border-top:2px solid #2a1a12;border-bottom:2px solid #2a1a12}
@@ -88,29 +88,7 @@ body{font-family:Manrope,sans-serif;color:#E8EEF6}
   <div id="phoneWrap"><div id="phone">
     <div class="face"><div class="screen">
       <div class="island"></div>
-      <div id="site">
-        <div class="nav"><b>Atelier Mira</b><span>MENÜ</span><div class="burger"></div></div>
-        <div class="hero">
-          <div class="blob"></div>
-          <div class="berry" style="right:120px;top:40px;transform:rotate(-20deg)"></div>
-          <div class="berry" style="right:30px;top:20px;transform:rotate(25deg)"></div>
-          <div class="berry" style="right:70px;top:12px"></div>
-          <h1>Her dilim<br><i>bir hikâye.</i></h1>
-          <div class="btn">Sipariş ver →</div>
-        </div>
-        <div class="sec"><h2>Bu haftanın favorileri</h2></div>
-        <div class="cards">
-          <div class="card c1"><span>Çikolatalı Drip</span></div>
-          <div class="card c2"><span>Frambuazlı Tart</span></div>
-          <div class="card c3"><span>Antep Fıstıklı</span></div>
-          <div class="card c4"><span>Karamel Cheesecake</span></div>
-        </div>
-        <div class="order"><span>Online sipariş · 7/24</span><em>Sepete ekle</em></div>
-        <div class="cards">
-          <div class="card c2"><span>Doğum Günü</span></div>
-          <div class="card c1"><span>Butik Pasta</span></div>
-        </div>
-      </div>
+      <div id="site"><img src="site.jpg" style="display:block;width:100%"></div>
       <div class="glare" id="glare"></div>
     </div></div>
   </div></div>
@@ -189,7 +167,7 @@ window.render=function(t){
   $('phoneWrap').style.opacity = 1-phOut; $('phoneWrap').style.filter=`blur(${eOut(prog(t,2.8,3.2))*6}px)`;
   $('glare').style.transform=`translateX(${-rot*6}px)`;
   // site auto-scroll
-  const sc = eIO(prog(t,1.2,2.6))*380 + eIO(prog(t,3.2,5.6))*260;
+  const sc = eIO(prog(t,1.0,2.7))*560 + eIO(prog(t,2.9,5.7))*2000;
   $('site').style.transform=`translateY(${-sc}px)`;
   // ticks rotate around ellipse
   document.querySelectorAll('.tk').forEach((r,i)=>{const a=i/36*Math.PI*2 + t*1.4;
